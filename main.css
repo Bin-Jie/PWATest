@@ -1,0 +1,8 @@
+#mainBox {
+    width: 87.2vw;
+    height: 148.8vw;
+    background-color: palegreen;
+    border: 4px solid #000000;
+    position: absolute;
+    box-sizing: border-box;
+}
