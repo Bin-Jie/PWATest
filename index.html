@@ -4,10 +4,28 @@
         <title>Hello PWA</title>
         <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
         <link rel="stylesheet" href="main.css">
+        <link rel="manifest" href="manifest.json">
     </head>
+    
     <body>
         <div id="mainBox">
-            <h1>这是一个标题</h1>
+            <h1>这是一个标题1.1</h1>
         </div>
     </body>
+
+    <script type="text/javascript">
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', function () {
+            navigator.serviceWorker.register('/sw.js', {scope: '/'})
+              .then(function (registration) {
+                // 注册成功
+                console.log('ServiceWorker registration successful with scope: ', registration.scope)
+              })
+              .catch(function (err) {
+                // 注册失败:(
+                console.log('ServiceWorker registration failed: ', err)
+              })
+          })
+        }
+    </script>
 </html>
